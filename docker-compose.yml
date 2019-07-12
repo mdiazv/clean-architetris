@@ -1,0 +1,8 @@
+version: '3'
+services:
+  tetris:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
