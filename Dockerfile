@@ -13,4 +13,5 @@ FROM alpine:latest
 WORKDIR '/app'
 COPY --from=builder /app/clean-architetris . 
 
+EXPOSE 8080
 CMD ["/app/clean-architetris"]
