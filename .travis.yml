@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run mdiazv/clean-architetris go test -cover ./...
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "clean-architetris"
+  env: "CleanArchitetris-env"
+  bucket_name: "elasticbeanstalk-us-east-2-323828680573"
+  bucket_path: "clean-architetris"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
